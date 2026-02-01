@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Shield, Mail } from "lucide-react";
+import { Menu, X, Shield, Mail, Calendar } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks: { href: string; label: string }[] = [];
@@ -62,14 +62,21 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* Contact Link */}
-          <div className="hidden lg:flex items-center gap-4">
+          {/* CTA Buttons */}
+          <div className="hidden lg:flex items-center gap-3">
             <a
               href="mailto:info@zrotrustai.com"
-              className="flex items-center gap-2 text-foreground hover:text-primary transition-colors font-medium"
+              className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-foreground hover:text-primary border border-border/50 rounded-md hover:bg-muted/50 transition-colors"
             >
               <Mail className="h-4 w-4" />
-              <span>info@zrotrustai.com</span>
+              Contact Us
+            </a>
+            <a
+              href="mailto:info@zrotrustai.com?subject=Schedule%20a%20Demo"
+              className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
+            >
+              <Calendar className="h-4 w-4" />
+              Book a Call
             </a>
           </div>
 
@@ -101,13 +108,20 @@ export function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <div className="pt-4 border-t border-border">
+              <div className="pt-4 border-t border-border space-y-2">
                 <a
                   href="mailto:info@zrotrustai.com"
-                  className="flex items-center justify-center gap-2 w-full py-3 text-foreground hover:text-primary transition-colors font-medium"
+                  className="flex items-center justify-center gap-2 w-full py-3 text-foreground hover:text-primary border border-border/50 rounded-md transition-colors font-medium"
                 >
                   <Mail className="h-4 w-4" />
-                  <span>info@zrotrustai.com</span>
+                  Contact Us
+                </a>
+                <a
+                  href="mailto:info@zrotrustai.com?subject=Schedule%20a%20Demo"
+                  className="flex items-center justify-center gap-2 w-full py-3 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors font-medium"
+                >
+                  <Calendar className="h-4 w-4" />
+                  Book a Call
                 </a>
               </div>
             </div>
