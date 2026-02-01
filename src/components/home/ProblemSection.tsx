@@ -6,9 +6,12 @@ export function ProblemSection() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            AI systems are becoming <span className="text-gradient">stochastic infrastructure.</span>
+            AI systems are becoming <span className="text-gradient">critical infrastructure.</span>
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-muted-foreground mb-6">
+            Enterprises need more than alerts and red flags—they need evidence. We're building the privacy evidence layer that lets organizations ship GenAI with confidence, proving safety at every stage of the lifecycle.
+          </p>
+          <p className="text-muted-foreground">
             Training data refreshes, RAG corpora change, prompts and tools evolve—and behavior shifts.
             Security teams need answers to two fundamental questions.
           </p>
