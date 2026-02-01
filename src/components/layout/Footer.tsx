@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Shield, Linkedin, Mail } from "lucide-react";
+import { Shield } from "lucide-react";
 
 const footerLinks = {
   legal: [
@@ -24,24 +24,6 @@ export function Footer() {
             <p className="text-sm text-muted-foreground max-w-xs mb-6">
               Privacy evidence for GenAI. Certify data and system behavior before production.
             </p>
-            <div className="flex items-center gap-4">
-              <a
-                href="mailto:info@zrotrustai.com"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Email"
-              >
-                <Mail className="h-5 w-5" />
-              </a>
-              <a
-                href="https://linkedin.com/company/zrotrust"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
-            </div>
           </div>
 
           {/* Legal Links */}
