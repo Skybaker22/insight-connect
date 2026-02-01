@@ -53,7 +53,9 @@ export function HeroSection() {
                 info@zrotrustai.com
               </a>
               <a
-                href="mailto:info@zrotrustai.com?subject=Schedule%20a%20Demo"
+                href="https://calendly.com/zrotrustai-info/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 px-6 py-3 text-base font-semibold bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
               >
                 <Calendar className="h-5 w-5" />

@@ -72,7 +72,9 @@ export function Navbar() {
               Contact Us
             </a>
             <a
-              href="mailto:info@zrotrustai.com?subject=Schedule%20a%20Demo"
+              href="https://calendly.com/zrotrustai-info/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
             >
               <Calendar className="h-4 w-4" />
@@ -117,7 +119,9 @@ export function Navbar() {
                   Contact Us
                 </a>
                 <a
-                  href="mailto:info@zrotrustai.com?subject=Schedule%20a%20Demo"
+                  href="https://calendly.com/zrotrustai-info/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 w-full py-3 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors font-medium"
                 >
                   <Calendar className="h-4 w-4" />
