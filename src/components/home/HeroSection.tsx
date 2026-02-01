@@ -70,18 +70,34 @@ export function HeroSection({ onOpenDemo }: HeroSectionProps) {
           </div>
           
           {/* Right Content - Dashboard Screenshot */}
-          <div className="relative animate-fade-up animation-delay-500">
-            <div className="relative rounded-xl border border-border/50 overflow-hidden glow-teal">
+          <div className="relative animate-fade-up animation-delay-500" style={{ perspective: '1000px' }}>
+            <div 
+              className="relative rounded-xl border border-border/50 overflow-hidden shadow-2xl shadow-primary/20"
+              style={{ 
+                transform: 'rotateY(-5deg) rotateX(2deg)',
+                transformStyle: 'preserve-3d'
+              }}
+            >
+              {/* Screen bezel effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none z-10" />
               <img 
                 src={dashboardMockup} 
                 alt="ZROTrust.AI Dashboard - Overview of AI security posture with risk scores, scan results, and response workflows"
                 className="w-full h-auto"
+                loading="eager"
+                decoding="async"
               />
             </div>
             
+            {/* Floating glow beneath */}
+            <div 
+              className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-3/4 h-8 bg-primary/30 blur-2xl rounded-full"
+              style={{ transform: 'translateX(-50%) rotateX(80deg)' }}
+            />
+            
             {/* Decorative elements */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/10 rounded-full blur-3xl" />
-            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-primary/5 rounded-full blur-3xl" />
+            <div className="absolute -top-6 -right-6 w-32 h-32 bg-primary/15 rounded-full blur-3xl" />
+            <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-primary/10 rounded-full blur-3xl" />
           </div>
         </div>
       </div>
