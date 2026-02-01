@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { HeroSection } from "@/components/home/HeroSection";
 import { ProblemSection } from "@/components/home/ProblemSection";
@@ -7,24 +6,18 @@ import { SolutionSection } from "@/components/home/SolutionSection";
 import { ApproachSection } from "@/components/home/ApproachSection";
 import { ProductSection } from "@/components/home/ProductSection";
 import { CTASection } from "@/components/home/CTASection";
-import { DemoModal } from "@/components/DemoModal";
 
 const Index = () => {
-  const [isDemoOpen, setIsDemoOpen] = useState(false);
-
   return (
-    <>
-      <Layout>
-        <HeroSection onOpenDemo={() => setIsDemoOpen(true)} />
-        <ProblemSection />
-        <WhyNowSection />
-        <SolutionSection />
-        <ApproachSection />
-        <ProductSection />
-        <CTASection onOpenDemo={() => setIsDemoOpen(true)} />
-      </Layout>
-      <DemoModal isOpen={isDemoOpen} onClose={() => setIsDemoOpen(false)} />
-    </>
+    <Layout>
+      <HeroSection />
+      <ProblemSection />
+      <WhyNowSection />
+      <SolutionSection />
+      <ApproachSection />
+      <ProductSection />
+      <CTASection />
+    </Layout>
   );
 };
 

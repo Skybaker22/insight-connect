@@ -1,11 +1,6 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Mail, Calendar } from "lucide-react";
+import { Mail, Calendar } from "lucide-react";
 
-interface CTASectionProps {
-  onOpenDemo: () => void;
-}
-
-export function CTASection({ onOpenDemo }: CTASectionProps) {
+export function CTASection() {
   return (
     <section id="contact" className="py-16 lg:py-24">
       <div className="container mx-auto px-4 lg:px-8">
@@ -21,34 +16,22 @@ export function CTASection({ onOpenDemo }: CTASectionProps) {
               Join enterprises that ship GenAI with confidence. Evidence-driven safety, not just alerts.
             </p>
             
-            <Button
-              size="lg"
-              onClick={onOpenDemo}
-              className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-base px-8 h-12 mb-10"
-            >
-              Request a Demo
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-            
             {/* Contact options */}
-            <div className="pt-8 border-t border-border/50">
-              <p className="text-sm text-muted-foreground mb-6">Or reach out directly</p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                <a
-                  href="mailto:info@zrotrustai.com"
-                  className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
-                >
-                  <Mail className="h-5 w-5" />
-                  <span>info@zrotrustai.com</span>
-                </a>
-                <a
-                  href="mailto:info@zrotrustai.com?subject=Schedule%20a%20Demo"
-                  className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
-                >
-                  <Calendar className="h-5 w-5" />
-                  <span>Schedule a call</span>
-                </a>
-              </div>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <a
+                href="mailto:info@zrotrustai.com"
+                className="flex items-center gap-3 text-foreground hover:text-primary transition-colors font-medium"
+              >
+                <Mail className="h-5 w-5" />
+                <span>info@zrotrustai.com</span>
+              </a>
+              <a
+                href="mailto:info@zrotrustai.com?subject=Schedule%20a%20Demo"
+                className="flex items-center gap-3 text-foreground hover:text-primary transition-colors font-medium"
+              >
+                <Calendar className="h-5 w-5" />
+                <span>Schedule a call</span>
+              </a>
             </div>
           </div>
         </div>

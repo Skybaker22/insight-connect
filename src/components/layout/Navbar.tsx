@@ -1,16 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Shield } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Menu, X, Shield, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks: { href: string; label: string }[] = [];
 
-interface NavbarProps {
-  onOpenDemo: () => void;
-}
-
-export function Navbar({ onOpenDemo }: NavbarProps) {
+export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -67,14 +62,15 @@ export function Navbar({ onOpenDemo }: NavbarProps) {
             ))}
           </div>
 
-          {/* CTA Button */}
+          {/* Contact Link */}
           <div className="hidden lg:flex items-center gap-4">
-            <Button
-              onClick={onOpenDemo}
-              className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold"
+            <a
+              href="mailto:info@zrotrustai.com"
+              className="flex items-center gap-2 text-foreground hover:text-primary transition-colors font-medium"
             >
-              Request a Demo
-            </Button>
+              <Mail className="h-4 w-4" />
+              <span>info@zrotrustai.com</span>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -106,12 +102,13 @@ export function Navbar({ onOpenDemo }: NavbarProps) {
                 </Link>
               ))}
               <div className="pt-4 border-t border-border">
-                <Button
-                  onClick={onOpenDemo}
-                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold"
+                <a
+                  href="mailto:info@zrotrustai.com"
+                  className="flex items-center justify-center gap-2 w-full py-3 text-foreground hover:text-primary transition-colors font-medium"
                 >
-                  Request a Demo
-                </Button>
+                  <Mail className="h-4 w-4" />
+                  <span>info@zrotrustai.com</span>
+                </a>
               </div>
             </div>
           </div>
