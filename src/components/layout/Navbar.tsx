@@ -4,15 +4,7 @@ import { Menu, X, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const navLinks = [
-  { href: "/product", label: "Product" },
-  { href: "/how-it-works", label: "How it Works" },
-  { href: "/use-cases", label: "Use Cases" },
-  { href: "/security", label: "Security" },
-  { href: "/pricing", label: "Pricing" },
-  { href: "/company", label: "Company" },
-  { href: "/contact", label: "Contact" },
-];
+const navLinks: { href: string; label: string }[] = [];
 
 interface NavbarProps {
   onOpenDemo: () => void;

@@ -6,6 +6,8 @@ import { WhyFailSection } from "@/components/home/WhyFailSection";
 import { WhyNowSection } from "@/components/home/WhyNowSection";
 import { SolutionSection } from "@/components/home/SolutionSection";
 import { ApproachSection } from "@/components/home/ApproachSection";
+import { ProductSection } from "@/components/home/ProductSection";
+import { ContactSection } from "@/components/home/ContactSection";
 import { CTASection } from "@/components/home/CTASection";
 import { DemoModal } from "@/components/DemoModal";
 
@@ -21,6 +23,8 @@ const Index = () => {
         <WhyNowSection />
         <SolutionSection />
         <ApproachSection />
+        <ProductSection />
+        <ContactSection />
         <CTASection onOpenDemo={() => setIsDemoOpen(true)} />
       </Layout>
       <DemoModal isOpen={isDemoOpen} onClose={() => setIsDemoOpen(false)} />
