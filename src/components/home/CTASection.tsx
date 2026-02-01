@@ -26,7 +26,9 @@ export function CTASection() {
                 info@zrotrustai.com
               </a>
               <a
-                href="mailto:info@zrotrustai.com?subject=Schedule%20a%20Demo"
+                href="https://calendly.com/zrotrustai-info/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 px-8 py-4 text-lg font-semibold bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors w-full sm:w-auto"
               >
                 <Calendar className="h-5 w-5" />
