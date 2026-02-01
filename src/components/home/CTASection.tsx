@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Mail, Calendar } from "lucide-react";
 
 interface CTASectionProps {
   onOpenDemo: () => void;
@@ -8,7 +7,7 @@ interface CTASectionProps {
 
 export function CTASection({ onOpenDemo }: CTASectionProps) {
   return (
-    <section className="py-16 lg:py-24">
+    <section id="contact" className="py-16 lg:py-24">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="relative max-w-4xl mx-auto">
           {/* Background glow */}
@@ -21,23 +20,35 @@ export function CTASection({ onOpenDemo }: CTASectionProps) {
             <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
               Join enterprises that ship GenAI with confidence. Evidence-driven safety, not just alerts.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button
-                size="lg"
-                onClick={onOpenDemo}
-                className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-base px-8 h-12"
-              >
-                Request a Demo
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className="font-semibold text-base px-8 h-12"
-              >
-                <Link to="/product">View Product</Link>
-              </Button>
+            
+            <Button
+              size="lg"
+              onClick={onOpenDemo}
+              className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-base px-8 h-12 mb-10"
+            >
+              Request a Demo
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+            
+            {/* Contact options */}
+            <div className="pt-8 border-t border-border/50">
+              <p className="text-sm text-muted-foreground mb-6">Or reach out directly</p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a
+                  href="mailto:info@zrotrustai.com"
+                  className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <Mail className="h-5 w-5" />
+                  <span>info@zrotrustai.com</span>
+                </a>
+                <a
+                  href="mailto:info@zrotrustai.com?subject=Schedule%20a%20Demo"
+                  className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <Calendar className="h-5 w-5" />
+                  <span>Schedule a call</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
