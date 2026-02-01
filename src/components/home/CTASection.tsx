@@ -16,21 +16,21 @@ export function CTASection() {
               Join enterprises that ship GenAI with confidence. Evidence-driven safety, not just alerts.
             </p>
             
-            {/* Contact options */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
                 href="mailto:info@zrotrustai.com"
-                className="flex items-center gap-3 text-foreground hover:text-primary transition-colors font-medium"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 text-lg font-semibold bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors w-full sm:w-auto"
               >
                 <Mail className="h-5 w-5" />
-                <span>info@zrotrustai.com</span>
+                info@zrotrustai.com
               </a>
               <a
                 href="mailto:info@zrotrustai.com?subject=Schedule%20a%20Demo"
-                className="flex items-center gap-3 text-foreground hover:text-primary transition-colors font-medium"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 text-lg font-semibold bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors w-full sm:w-auto"
               >
                 <Calendar className="h-5 w-5" />
-                <span>Schedule a call</span>
+                Schedule a Call
               </a>
             </div>
           </div>
