@@ -1,4 +1,4 @@
-import { TrendingUp, Scale, Repeat, ArrowRight, DollarSign } from "lucide-react";
+import { TrendingUp, Scale, Repeat, ArrowRight } from "lucide-react";
 
 const reasons = [
   {
@@ -31,7 +31,7 @@ export function WhyNowSection() {
             The pace of AI deployment has outstripped security's ability to keep up. It's time for systematic, evidence-driven safety.
           </p>
           
-          <div className="grid sm:grid-cols-2 gap-4 mb-8">
+          <div className="grid sm:grid-cols-2 gap-4">
             {reasons.map((item, i) => (
               <div
                 key={i}
@@ -43,22 +43,6 @@ export function WhyNowSection() {
                 <p className="text-foreground/90">{item.text}</p>
               </div>
             ))}
-          </div>
-          
-          {/* Impact Callout */}
-          <div className="bg-gradient-card rounded-xl p-6 border border-primary/20 max-w-md mx-auto">
-            <div className="flex items-center gap-4">
-              <div className="shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                <DollarSign className="h-6 w-6 text-primary" />
-              </div>
-              <div>
-                <p className="text-sm text-muted-foreground mb-1">Impact</p>
-                <p className="text-lg font-semibold">
-                  Avg. cost of a data breach: <span className="text-primary">$4.9M</span>
-                </p>
-                <p className="text-xs text-muted-foreground">Source: IBM Cost of a Data Breach Report 2024</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
