@@ -1,12 +1,7 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield, Activity, FileCheck, Truck } from "lucide-react";
+import { Shield, Activity, FileCheck, Truck, Mail, Calendar } from "lucide-react";
 import dashboardMockup from "@/assets/dashboard-mockup.png";
 
-interface HeroSectionProps {
-  onOpenDemo: () => void;
-}
-
-export function HeroSection({ onOpenDemo }: HeroSectionProps) {
+export function HeroSection() {
   return (
     <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
       {/* Background Effects */}
@@ -49,23 +44,21 @@ export function HeroSection({ onOpenDemo }: HeroSectionProps) {
               </span>
             </div>
             
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 animate-fade-up animation-delay-400">
-              <Button
-                size="lg"
-                onClick={onOpenDemo}
-                className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-base px-8 h-12"
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 animate-fade-up animation-delay-400">
+              <a
+                href="mailto:info@zrotrustai.com"
+                className="flex items-center gap-2 text-foreground hover:text-primary transition-colors font-semibold"
               >
-                Request a Demo
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="font-semibold text-base px-8 h-12"
-                onClick={() => document.getElementById('product')?.scrollIntoView({ behavior: 'smooth' })}
+                <Mail className="h-5 w-5" />
+                <span>info@zrotrustai.com</span>
+              </a>
+              <a
+                href="mailto:info@zrotrustai.com?subject=Schedule%20a%20Demo"
+                className="flex items-center gap-2 text-foreground hover:text-primary transition-colors font-semibold"
               >
-                View Product
-              </Button>
+                <Calendar className="h-5 w-5" />
+                <span>Schedule a call</span>
+              </a>
             </div>
           </div>
           
