@@ -1,0 +1,81 @@
+import { AlertTriangle, RefreshCw, Database, Bot } from "lucide-react";
+
+export function ProblemSection() {
+  return (
+    <section className="py-16 lg:py-24 bg-muted/30">
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            AI systems are becoming <span className="text-gradient">stochastic infrastructure.</span>
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            Training data refreshes, RAG corpora change, prompts and tools evolve—and behavior shifts.
+            Security teams need answers to two fundamental questions.
+          </p>
+        </div>
+        
+        {/* Two Big Questions */}
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto mb-16">
+          <div className="relative bg-card rounded-xl p-6 lg:p-8 border border-border/50 hover:border-primary/30 transition-colors group">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/50 to-transparent rounded-t-xl" />
+            <Database className="h-8 w-8 text-primary mb-4" />
+            <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+              "Is this data safe to train / index on?"
+            </h3>
+            <p className="text-muted-foreground">
+              Before data enters your models, you need evidence that it won't leak PII, secrets, or proprietary information.
+            </p>
+          </div>
+          
+          <div className="relative bg-card rounded-xl p-6 lg:p-8 border border-border/50 hover:border-primary/30 transition-colors group">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/50 to-transparent rounded-t-xl" />
+            <Bot className="h-8 w-8 text-primary mb-4" />
+            <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+              "Is the deployed system safe after release?"
+            </h3>
+            <p className="text-muted-foreground">
+              After deployment, you need continuous evidence that your system behavior hasn't regressed.
+            </p>
+          </div>
+        </div>
+        
+        {/* What's Breaking */}
+        <div className="max-w-3xl mx-auto">
+          <h3 className="text-2xl font-bold mb-8 text-center">What's breaking in production</h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              {
+                icon: AlertTriangle,
+                text: "LLMs can disclose PII/PHI, source code, IP, and credentials",
+              },
+              {
+                icon: RefreshCw,
+                text: "RAG + tool-using agents widen the attack surface",
+              },
+              {
+                icon: Database,
+                text: "Fine-tuning increases memorization risk + compliance exposure",
+              },
+              {
+                icon: AlertTriangle,
+                text: "Traditional DLP/AppSec lacks LLM-specific, reproducible evidence",
+              },
+              {
+                icon: AlertTriangle,
+                text: "Security teams need 'prove it's fixed' workflows, not just alerts",
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="flex items-start gap-3 p-4 bg-card rounded-lg border border-border/50"
+              >
+                <item.icon className="h-5 w-5 text-destructive/80 shrink-0 mt-0.5" />
+                <p className="text-sm text-muted-foreground">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

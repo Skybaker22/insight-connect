@@ -1,13 +1,30 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import { Layout } from "@/components/layout/Layout";
+import { HeroSection } from "@/components/home/HeroSection";
+import { ProblemSection } from "@/components/home/ProblemSection";
+import { WhyFailSection } from "@/components/home/WhyFailSection";
+import { WhyNowSection } from "@/components/home/WhyNowSection";
+import { SolutionSection } from "@/components/home/SolutionSection";
+import { ApproachSection } from "@/components/home/ApproachSection";
+import { CTASection } from "@/components/home/CTASection";
+import { DemoModal } from "@/components/DemoModal";
 
 const Index = () => {
+  const [isDemoOpen, setIsDemoOpen] = useState(false);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <>
+      <Layout>
+        <HeroSection onOpenDemo={() => setIsDemoOpen(true)} />
+        <ProblemSection />
+        <WhyFailSection />
+        <WhyNowSection />
+        <SolutionSection />
+        <ApproachSection />
+        <CTASection onOpenDemo={() => setIsDemoOpen(true)} />
+      </Layout>
+      <DemoModal isOpen={isDemoOpen} onClose={() => setIsDemoOpen(false)} />
+    </>
   );
 };
 
