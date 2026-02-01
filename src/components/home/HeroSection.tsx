@@ -44,20 +44,20 @@ export function HeroSection() {
               </span>
             </div>
             
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 animate-fade-up animation-delay-400">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 animate-fade-up animation-delay-400">
               <a
                 href="mailto:info@zrotrustai.com"
-                className="flex items-center gap-2 text-foreground hover:text-primary transition-colors font-semibold"
+                className="inline-flex items-center justify-center gap-3 px-6 py-3 text-base font-semibold bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
               >
                 <Mail className="h-5 w-5" />
-                <span>info@zrotrustai.com</span>
+                info@zrotrustai.com
               </a>
               <a
                 href="mailto:info@zrotrustai.com?subject=Schedule%20a%20Demo"
-                className="flex items-center gap-2 text-foreground hover:text-primary transition-colors font-semibold"
+                className="inline-flex items-center justify-center gap-3 px-6 py-3 text-base font-semibold bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
               >
                 <Calendar className="h-5 w-5" />
-                <span>Schedule a call</span>
+                Schedule a Call
               </a>
             </div>
           </div>
