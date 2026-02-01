@@ -70,7 +70,7 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
       console.error("Error submitting lead:", error);
       toast({
         title: "Something went wrong",
-        description: "Please try again or email us directly.",
+        description: "Please try again or email us at info@zrotrustai.com.",
         variant: "destructive",
       });
     } finally {
