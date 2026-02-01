@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { HeroSection } from "@/components/home/HeroSection";
 import { ProblemSection } from "@/components/home/ProblemSection";
-import { WhyFailSection } from "@/components/home/WhyFailSection";
 import { WhyNowSection } from "@/components/home/WhyNowSection";
 import { SolutionSection } from "@/components/home/SolutionSection";
 import { ApproachSection } from "@/components/home/ApproachSection";
@@ -19,7 +18,6 @@ const Index = () => {
       <Layout>
         <HeroSection onOpenDemo={() => setIsDemoOpen(true)} />
         <ProblemSection />
-        <WhyFailSection />
         <WhyNowSection />
         <SolutionSection />
         <ApproachSection />
