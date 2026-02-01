@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Activity, FileCheck, Truck } from "lucide-react";
+import dashboardMockup from "@/assets/dashboard-mockup.png";
 
 interface HeroSectionProps {
   onOpenDemo: () => void;
@@ -59,71 +59,24 @@ export function HeroSection({ onOpenDemo }: HeroSectionProps) {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Button
-                asChild
                 variant="outline"
                 size="lg"
                 className="font-semibold text-base px-8 h-12"
+                onClick={() => document.getElementById('product')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                <Link to="/how-it-works">See How It Works</Link>
+                View Product
               </Button>
             </div>
           </div>
           
-          {/* Right Content - Product Mockup */}
+          {/* Right Content - Dashboard Screenshot */}
           <div className="relative animate-fade-up animation-delay-500">
-            <div className="relative bg-gradient-card rounded-xl border border-border/50 p-6 lg:p-8 glow-teal">
-              {/* Dashboard Header */}
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 rounded-full bg-destructive/80" />
-                  <div className="w-3 h-3 rounded-full bg-warning" />
-                  <div className="w-3 h-3 rounded-full bg-success" />
-                </div>
-                <span className="text-xs text-muted-foreground">ZROTrust Dashboard</span>
-              </div>
-              
-              {/* Score Card */}
-              <div className="bg-background/50 rounded-lg p-4 mb-4 border border-border/50">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-xs text-muted-foreground mb-1">Risk Score</p>
-                    <p className="text-3xl font-bold text-primary">23</p>
-                  </div>
-                  <div className="px-3 py-1.5 rounded bg-success/20 text-success text-sm font-semibold">
-                    PASS
-                  </div>
-                </div>
-              </div>
-              
-              {/* Evidence Card */}
-              <div className="bg-background/50 rounded-lg p-4 mb-4 border border-border/50">
-                <p className="text-xs text-muted-foreground mb-2">Evidence Pack</p>
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-foreground/80">PII Scan</span>
-                    <span className="text-success">✓ Clean</span>
-                  </div>
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-foreground/80">RAG Context</span>
-                    <span className="text-success">✓ No leaks</span>
-                  </div>
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-foreground/80">Secrets Scan</span>
-                    <span className="text-success">✓ Secure</span>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Workflow Steps */}
-              <div className="flex items-center justify-between text-xs text-muted-foreground">
-                <span className="text-primary font-medium">Scan</span>
-                <span className="text-primary/60">→</span>
-                <span className="text-primary font-medium">Analyze</span>
-                <span className="text-primary/60">→</span>
-                <span className="text-primary font-medium">Evidence</span>
-                <span className="text-primary/60">→</span>
-                <span className="text-primary font-medium">Gate</span>
-              </div>
+            <div className="relative rounded-xl border border-border/50 overflow-hidden glow-teal">
+              <img 
+                src={dashboardMockup} 
+                alt="ZROTrust.AI Dashboard - Overview of AI security posture with risk scores, scan results, and response workflows"
+                className="w-full h-auto"
+              />
             </div>
             
             {/* Decorative elements */}
