@@ -12,35 +12,50 @@ export function Footer() {
   return (
     <footer className="bg-background border-t border-border">
       <div className="container mx-auto px-4 lg:px-8 py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+        <div className="flex flex-col md:flex-row items-start justify-between gap-8">
           {/* Brand */}
-          <div className="md:col-span-2">
+          <div className="max-w-xs">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <Shield className="h-7 w-7 text-primary" />
-              <span className="text-lg font-bold tracking-tight">
-                ZROTrust<span className="text-primary">.AI</span>
+              <Shield className="h-6 w-6 text-accent" />
+              <span className="text-lg font-bold tracking-tight text-foreground">
+                ZROTrust<span className="text-accent">.AI</span>
               </span>
             </Link>
-            <p className="text-sm text-muted-foreground max-w-xs mb-6">
+            <p className="text-sm text-muted-foreground">
               Privacy evidence for GenAI. Certify data and system behavior before production.
             </p>
           </div>
 
-          {/* Legal Links */}
-          <div>
-            <h4 className="text-sm font-semibold mb-4">Legal</h4>
-            <ul className="space-y-3">
-              {footerLinks.legal.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    to={link.href}
+          {/* Links */}
+          <div className="flex gap-12">
+            <div>
+              <h4 className="text-sm font-semibold text-foreground mb-4">Legal</h4>
+              <ul className="space-y-3">
+                {footerLinks.legal.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      to={link.href}
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-sm font-semibold text-foreground mb-4">Contact</h4>
+              <ul className="space-y-3">
+                <li>
+                  <a
+                    href="mailto:info@zrotrustai.com"
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
-                    {link.label}
-                  </Link>
+                    info@zrotrustai.com
+                  </a>
                 </li>
-              ))}
-            </ul>
+              </ul>
+            </div>
           </div>
         </div>
 

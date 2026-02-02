@@ -1,9 +1,14 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Shield, Mail, Calendar } from "lucide-react";
+import { Menu, X, Shield } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const navLinks: { href: string; label: string }[] = [];
+const navLinks = [
+  { href: "#problem", label: "Problem" },
+  { href: "#solution", label: "Solution" },
+  { href: "#approach", label: "Approach" },
+  { href: "#product", label: "Product" },
+];
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,12 +27,19 @@ export function Navbar() {
     setIsMobileMenuOpen(false);
   }, [location]);
 
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border/50"
+          ? "bg-background/80 backdrop-blur-xl border-b border-border"
           : "bg-transparent"
       )}
     >
@@ -36,49 +48,43 @@ export function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <div className="relative">
-              <Shield className="h-8 w-8 text-primary transition-all group-hover:text-primary/80" />
-              <div className="absolute inset-0 blur-lg bg-primary/20 group-hover:bg-primary/30 transition-all" />
+              <Shield className="h-7 w-7 text-accent transition-all" />
             </div>
-            <span className="text-xl font-bold tracking-tight">
-              ZROTrust<span className="text-primary">.AI</span>
+            <span className="text-lg font-bold tracking-tight text-foreground">
+              ZROTrust<span className="text-accent">.AI</span>
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className={cn(
-                  "px-3 py-2 text-sm font-medium rounded-md transition-colors",
-                  location.pathname === link.href
-                    ? "text-primary bg-primary/10"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
-                )}
-              >
-                {link.label}
-              </Link>
-            ))}
+          {/* Centered Pill Navigation */}
+          <div className="hidden lg:flex items-center">
+            <div className="flex items-center gap-1 px-2 py-1.5 bg-muted rounded-full border border-border">
+              {navLinks.map((link) => (
+                <button
+                  key={link.href}
+                  onClick={() => scrollToSection(link.href)}
+                  className="px-4 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground rounded-full transition-colors hover:bg-background"
+                >
+                  {link.label}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
             <a
               href="mailto:info@zrotrustai.com"
-              className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-foreground hover:text-primary border border-border/50 rounded-md hover:bg-muted/50 transition-colors"
+              className="px-4 py-2 text-sm font-medium text-foreground hover:text-muted-foreground transition-colors"
             >
-              <Mail className="h-4 w-4" />
-              Contact Us
+              Contact
             </a>
             <a
               href="https://calendly.com/zrotrustai-info/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
+              className="px-5 py-2 text-sm font-medium bg-foreground text-background rounded-full hover:bg-foreground/90 transition-colors"
             >
-              <Calendar className="h-4 w-4" />
-              Book a Call
+              Get Started
             </a>
           </div>
 
@@ -94,38 +100,34 @@ export function Navbar() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-background border-b border-border">
             <div className="container px-4 py-4 space-y-2">
               {navLinks.map((link) => (
-                <Link
+                <button
                   key={link.href}
-                  to={link.href}
-                  className={cn(
-                    "block px-4 py-3 text-sm font-medium rounded-md transition-colors",
-                    location.pathname === link.href
-                      ? "text-primary bg-primary/10"
-                      : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
-                  )}
+                  onClick={() => {
+                    scrollToSection(link.href);
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="block w-full text-left px-4 py-3 text-sm font-medium rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
                 >
                   {link.label}
-                </Link>
+                </button>
               ))}
               <div className="pt-4 border-t border-border space-y-2">
                 <a
                   href="mailto:info@zrotrustai.com"
-                  className="flex items-center justify-center gap-2 w-full py-3 text-foreground hover:text-primary border border-border/50 rounded-md transition-colors font-medium"
+                  className="flex items-center justify-center w-full py-3 text-foreground border border-border rounded-full transition-colors font-medium hover:bg-muted"
                 >
-                  <Mail className="h-4 w-4" />
                   Contact Us
                 </a>
                 <a
                   href="https://calendly.com/zrotrustai-info/30min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full py-3 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors font-medium"
+                  className="flex items-center justify-center w-full py-3 bg-foreground text-background rounded-full hover:bg-foreground/90 transition-colors font-medium"
                 >
-                  <Calendar className="h-4 w-4" />
-                  Book a Call
+                  Get Started
                 </a>
               </div>
             </div>
